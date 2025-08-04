@@ -3,7 +3,7 @@ from pymongo import MongoClient
 from datetime import datetime
 import subprocess
 
-# Define Docker Compose file (no init script this time)
+# Define Docker Compose file
 docker_compose = """
 services:
   mongo:
@@ -32,7 +32,7 @@ try:
 except Exception as e:
     print(f"Failed to start MongoDB container: {e}")
 
-# Connect to MongoDB (wait if needed)
+# Connect to MongoDB
 client = MongoClient("mongodb://localhost:27017/")
 db = client["invasive_db"]
 
